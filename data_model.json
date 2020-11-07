@@ -1,0 +1,122 @@
+freeway_loopdata
+{
+    "dectorid": " ",
+    "starttime": " ",
+    "volume": " ",
+    "speed": " ",
+    "occupency": " ",
+    "status": " ",
+    "dqflags": " ",
+}
+
+Freeway-stations
+{
+    "stationid": ,
+    "highwayID": ,
+    "milepost": ,
+    "locationtext": ,
+    "upstream": ,
+    "downstream": ,
+    "stationclass": ,
+    "numberlanes": ,
+    "latlon": ,
+    "length": ,
+}
+
+
+
+highways
+{
+    "highwayID": ,
+    "shortdirection": ,
+    "direction": ,
+    "highwayname": ,
+}
+
+freeway_detectors
+{
+    "detectorid": ,
+    "highwayid": ,
+    "milepost": ,
+    "locationtext": ,
+    "detectorclass": ,
+    "lanenumer": ,
+    "station": ,
+}
+
+
+
+
+
+
+
+Freeway-stations
+{
+    "stationid": ,
+    "highways": {
+        "highwayID": ,
+        "shortdirection": ,
+        "direction": ,
+        "highwayname": ,
+    },
+    "milepost": ,
+    "locationtext": ,
+    "upstream": ,
+    "downstream": ,
+    "stationclass": ,
+    "numberlanes": ,
+    "latlon": ,
+    "length": ,
+}
+
+
+
+
+
+
+
+Freeway-stations - Embedded Freeway_detectors
+{
+    "stationid": ,
+    "detectors": [
+        {
+            "detectorid": ,
+            "detectorclass": ,
+            "lanenumer": ,
+        }
+    ],
+    "highwayID": ,
+    "milepost": ,
+    "locationtext": ,
+    "upstream": ,
+    "downstream": ,
+    "stationclass": ,
+    "numberlanes": ,
+    "latlon": ,
+    "length": ,
+}
+
+
+
+Freeway-stations - Embedded Freeway_detectors
+{
+    "stationid": ,
+    "detectors": [
+        {
+            "detectorid": ,
+            "detectorclass": ,
+            "lanenumer": ,
+        }
+    ],
+    "highwayID": ,
+    "milepost": ,
+    "locationtext": ,
+    "stations": {
+        "upstream": ,
+        "downstream": ,
+        "stationclass": ,
+        "numberlanes": ,
+        "latlon": ,
+        "length": ,
+    },
+}
