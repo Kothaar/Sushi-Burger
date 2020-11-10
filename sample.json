@@ -1,0 +1,21 @@
+{
+    "stationid": "",
+    "detectors": [
+        {
+            "detectorid": "",
+            "detectorclass": "",
+            "lanenumber": ""
+        }
+    ],
+    "highwayid": "",
+    "milepost": "",
+    "locationtext": "",
+    "stations": {
+        "upstream": "",
+        "downstream": "",
+        "stationlanes": "",
+        "numberlanes": "",
+        "latlon": "",
+        "length": ""
+    }
+}
