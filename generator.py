@@ -5,6 +5,7 @@ import copy
 list = [] #store data from the file
 result = [] #holds all the json data 
 
+#add data into new json file called "freeway.json"
 def add_to_json(list):
   with open('sample.json') as jsonfile:
     data = json.load(jsonfile)
@@ -17,24 +18,24 @@ def add_to_json(list):
           temp['stations'][i] = eachData[i]
           rem.append(i) 
          
-      for i in rem: #iterate thru rem and find duplicates in temp. remove that
-        if i in temp:
-          del temp[i]
+      for dup in rem: #iterate through rem and find duplicates in temp. remove that
+        if dup in temp:
+          del temp[dup]
       result.append(temp) 
   
   with open("freeway.json","w") as outfile:
     for itr in result:
       json_obj = json.dumps(itr,indent=4)
       outfile.write(json_obj+'\n\n')
+  return
 
-
+#read freeway_stations.csv 
 def read_csv():
   with open("freeway_stations.csv", newline='') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
       list.append(row)
   add_to_json(list)
+  return
 
 read_csv()
-
-
