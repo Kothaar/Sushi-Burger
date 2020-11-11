@@ -15,7 +15,7 @@ freeway = {
   "stations": {
     "upstream": "",
     "downstream": "",
-    "stationlanes": "",
+    "stationclass": "",
     "numberlanes": "",
     "latlon": "",
     "length": "",
