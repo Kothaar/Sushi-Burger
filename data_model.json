@@ -1,116 +1,26 @@
-freeway_loopdata
-{
-    "dectorid": " ",
-    "starttime": " ",
-    "volume": " ",
-    "speed": " ",
-    "occupency": " ",
-    "status": " ",
-    "dqflags": " ",
-}
-
-Freeway-stations
-{
-    "stationid": ,
-    "highwayID": ,
-    "milepost": ,
-    "locationtext": ,
-    "upstream": ,
-    "downstream": ,
-    "stationclass": ,
-    "numberlanes": ,
-    "latlon": ,
-    "length": ,
-}
-
-
-
-highways
-{
-    "highwayID": ,
-    "shortdirection": ,
-    "direction": ,
-    "highwayname": ,
-}
-
-freeway_detectors
-{
-    "detectorid": ,
-    "highwayid": ,
-    "milepost": ,
-    "locationtext": ,
-    "detectorclass": ,
-    "lanenumer": ,
-    "station": ,
-}
-
-
-
-
-
-
-
-Freeway-stations
-{
-    "stationid": ,
-    "highways": {
-        "highwayID": ,
-        "shortdirection": ,
-        "direction": ,
-        "highwayname": ,
-    },
-    "milepost": ,
-    "locationtext": ,
-    "upstream": ,
-    "downstream": ,
-    "stationclass": ,
-    "numberlanes": ,
-    "latlon": ,
-    "length": ,
-}
-
-
-
-
-
-
-
 Freeway-stations - Embedded Freeway_detectors
 {
-    "stationid": ,
+    "stationid": 1047,
     "detectors": [
         {
-            "detectorid": ,
-            "detectorclass": ,
-            "lanenumer": ,
-        }
-    ],
-    "highwayID": ,
-    "milepost": ,
-    "locationtext": ,
-    "upstream": ,
-    "downstream": ,
-    "stationclass": ,
-    "numberlanes": ,
-    "latlon": ,
-    "length": ,
-}
-
-
-
-Freeway-stations - Embedded Freeway_detectors
-{
-    "stationid": ,
-    "detectors": [
+            "detectorid": 1361,
+            "detectorclass": 1,
+            "lanenumer": 1,
+        } ,
         {
-            "detectorid": ,
-            "detectorclass": ,
-            "lanenumer": ,
-        }
+            "detectorid": 1362,
+            "detectorclass": 1,
+            "lanenumer": 2,
+        } ,
+        {
+            "detectorid": 1363,
+            "detectorclass": 1,
+            "lanenumer": 3,
+        } ,
     ],
-    "highwayID": ,
+    "highwayID": 3,
     "milepost": ,
-    "locationtext": ,
+    "locationtext": "Foster NB",
     "stations": {
         "upstream": ,
         "downstream": ,
@@ -119,4 +29,20 @@ Freeway-stations - Embedded Freeway_detectors
         "latlon": ,
         "length": ,
     },
+}
+
+
+{
+    "detectorid" : ,
+    "info_need_better_nate" : [
+        {
+            "starttime" : ,
+            "volume" : ,
+            "speed" : , 
+            "occupancy" : ,
+            "status" : ,
+            "dqflags" : ,
+        }
+    ]
+
 }
