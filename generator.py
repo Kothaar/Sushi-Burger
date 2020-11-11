@@ -11,7 +11,7 @@ def add_to_json(list):
     data = json.load(jsonfile)
     rem = [] #temporarily stores attributes that we need to remove 
     for eachData in list:
-      temp = copy.deepcopy(data) #deep copy the original 
+      temp = copy.deepcopy(data) #copy the original
       temp.update(eachData) #update values 
       for i in eachData:
         if i in temp['stations']:
@@ -21,8 +21,9 @@ def add_to_json(list):
       for dup in rem: #iterate through rem and find duplicates in temp. remove that
         if dup in temp:
           del temp[dup]
-      result.append(temp) 
+      result.append(temp) #add each json into result 
   
+  #iterate through result and put all the json data into freeway.json
   with open("freeway.json","w") as outfile:
     for itr in result:
       json_obj = json.dumps(itr,indent=4)
