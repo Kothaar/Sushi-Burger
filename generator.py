@@ -13,8 +13,10 @@ def add_to_json(list):
       temp.update(eachData) #update values 
       result.append(temp) 
   
-  for itr in result:
-    print(itr)
+  with open("freeway.json","w") as outfile:
+    for itr in result:
+      json_obj = json.dumps(itr,indent=4)
+      outfile.write(json_obj+'\n\n')
 
 
 def read_csv():
