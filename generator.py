@@ -8,7 +8,7 @@ detectorList = []
 result = [] #holds all the json data 
 
 #add data into new json file called "freeway.json"
-def add_to_json(list,highwayList):
+def generator(list,highwayList,detectorList):
   with open('sample.json') as jsonfile:
     data = json.load(jsonfile)
     rem = [] #temporarily stores attributes that we need to remove 
@@ -40,7 +40,7 @@ def add_to_json(list,highwayList):
 
   
   #iterate through result and put all the json data into freeway.json
-  with open("freeway.json","w") as outfile:
+  with open("stations.json","w") as outfile:
     for itr in result:
       json_obj = json.dumps(itr,indent=4) #add indent=4 to make it more readable
       outfile.write(json_obj+'\n\n')
@@ -52,7 +52,6 @@ def read_csv():
     reader = csv.DictReader(csvfile)
     for row in reader:
       list.append(row)
-  #add_to_json(list)
   return
 
 #read highway
@@ -61,21 +60,22 @@ def read_highway():
     reader = csv.DictReader(highway)
     for row in reader:
       highwayList.append(row)      
-
+  return 
 
 #read freeway_detectors
 def read_detector():
   with open("freeway_detectors.csv", newline='') as detector:
     reader = csv.DictReader(detector)
     for row in reader:
-      print(row)
       detectorList.append(row)      
+  return
 
 
 def main():
   read_csv()
   read_highway()
-  add_to_json(list,highwayList)
+  read_detector()
+  generator(list,highwayList,detectorList)
 
 
 main()
