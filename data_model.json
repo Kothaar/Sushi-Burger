@@ -18,7 +18,12 @@ Freeway-stations - Embedded Freeway_detectors
             "lanenumer": 3,
         } ,
     ],
-    "highwayID": 3,
+    "highway" : {
+         "highwayID": 3,
+         "shortdirection" :,
+         "direction" : ,
+         "hiwayname" : ,
+    } ,
     "milepost": ,
     "locationtext": "Foster NB",
     "stations": {
