@@ -9,7 +9,12 @@ freeway = {
       "lanenumber": "",
     }
   ],
-  "highwayid": "",
+  "highway": {
+    "highwayid": "",
+    "shortdirection": "",
+    "direction": "",
+    "highwayname": "",
+  },
   "milepost": "",
   "locationtext": "",
   "stations": {

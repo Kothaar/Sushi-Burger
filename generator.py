@@ -17,6 +17,9 @@ def add_to_json(list):
         if i in temp['stations']:
           temp['stations'][i] = eachData[i]
           rem.append(i) 
+        if i in temp['highway']:
+          temp['highway'][i] = eachData[i]
+          rem.append(i)
          
       for dup in rem: #iterate through rem and find duplicates in temp. remove that
         if dup in temp:
@@ -26,7 +29,7 @@ def add_to_json(list):
   #iterate through result and put all the json data into freeway.json
   with open("freeway.json","w") as outfile:
     for itr in result:
-      json_obj = json.dumps(itr,indent=4)
+      json_obj = json.dumps(itr) #add indent=4 to make it more readable
       outfile.write(json_obj+'\n\n')
   return
 

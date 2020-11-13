@@ -1,25 +1,3 @@
-[
-    {
-    "stationid": "",
-    "detectors": [
-        {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
-        }
-    ],
-    "highwayid": "",
-    "milepost": "",
-    "locationtext": "",
-    "stations": {
-        "upstream": "",
-        "downstream": "",
-        "stationclass": "",
-        "numberlanes": "",
-        "latlon": "",
-        "length": ""
-    }
-},
 {
     "stationid": "",
     "detectors": [
@@ -29,7 +7,12 @@
             "lanenumber": ""
         }
     ],
-    "highwayid": "",
+    "highway": {
+        "highwayid": "",
+        "shortdirection": "",
+        "direction": "",
+        "highwayname": ""
+    },
     "milepost": "",
     "locationtext": "",
     "stations": {
@@ -41,4 +24,3 @@
         "length": ""
     }
 }
-]
