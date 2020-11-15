@@ -37,8 +37,25 @@ def generator(list,highwayList,detectorList):
             for b in data['highway']:
               if a == b:
                 data['highway'][b] = highwayList[loc][a]
-
-  
+    
+    #insert detectors data 
+    for obj in detectorList:
+      for data in result:
+        for i in data:
+          if obj['stationid'] == data['stationid']:
+            dest = data['detectors'][0]
+            c = copy.deepcopy(dest)
+            if dest['detectorid'] == '':
+              dest['detectorid'] = obj['detectorid']
+              dest['detectorclass'] = obj['detectorclass']
+              dest['lanenumber'] = obj['lanenumber']
+            else:
+              c['detectorid'] = obj['detectorid']
+              c['detectorclass'] = obj['detectorclass']
+              c['lanenumber'] = obj['lanenumber']
+              if c not in data['detectors']:
+                data['detectors'].append(c)
+      
   #iterate through result and put all the json data into freeway.json
   with open("json/stations.json","w") as outfile:
     for itr in result:
@@ -68,6 +85,7 @@ def read_detector():
     reader = csv.DictReader(detector)
     for row in reader:
       detectorList.append(row)      
+    #print(detectorList[0]['stationid'])
   return
 
 

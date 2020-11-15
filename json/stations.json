@@ -2,9 +2,24 @@
     "stationid": "1045",
     "detectors": [
         {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
+            "detectorid": "1345",
+            "detectorclass": "1",
+            "lanenumber": "1"
+        },
+        {
+            "detectorid": "1346",
+            "detectorclass": "1",
+            "lanenumber": "2"
+        },
+        {
+            "detectorid": "1347",
+            "detectorclass": "1",
+            "lanenumber": "3"
+        },
+        {
+            "detectorid": "1348",
+            "detectorclass": "1",
+            "lanenumber": "4"
         }
     ],
     "highway": {
@@ -29,9 +44,19 @@
     "stationid": "1046",
     "detectors": [
         {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
+            "detectorid": "1353",
+            "detectorclass": "1",
+            "lanenumber": "1"
+        },
+        {
+            "detectorid": "1354",
+            "detectorclass": "1",
+            "lanenumber": "2"
+        },
+        {
+            "detectorid": "1355",
+            "detectorclass": "1",
+            "lanenumber": "3"
         }
     ],
     "highway": {
@@ -56,9 +81,19 @@
     "stationid": "1047",
     "detectors": [
         {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
+            "detectorid": "1361",
+            "detectorclass": "1",
+            "lanenumber": "1"
+        },
+        {
+            "detectorid": "1362",
+            "detectorclass": "1",
+            "lanenumber": "2"
+        },
+        {
+            "detectorid": "1363",
+            "detectorclass": "1",
+            "lanenumber": "3"
         }
     ],
     "highway": {
@@ -83,9 +118,19 @@
     "stationid": "1117",
     "detectors": [
         {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
+            "detectorid": "1809",
+            "detectorclass": "1",
+            "lanenumber": "1"
+        },
+        {
+            "detectorid": "1810",
+            "detectorclass": "1",
+            "lanenumber": "2"
+        },
+        {
+            "detectorid": "1811",
+            "detectorclass": "1",
+            "lanenumber": "3"
         }
     ],
     "highway": {
@@ -110,9 +155,19 @@
     "stationid": "1048",
     "detectors": [
         {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
+            "detectorid": "1369",
+            "detectorclass": "1",
+            "lanenumber": "1"
+        },
+        {
+            "detectorid": "1370",
+            "detectorclass": "1",
+            "lanenumber": "2"
+        },
+        {
+            "detectorid": "1371",
+            "detectorclass": "1",
+            "lanenumber": "3"
         }
     ],
     "highway": {
@@ -137,9 +192,19 @@
     "stationid": "1142",
     "detectors": [
         {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
+            "detectorid": "1949",
+            "detectorclass": "1",
+            "lanenumber": "1"
+        },
+        {
+            "detectorid": "1950",
+            "detectorclass": "1",
+            "lanenumber": "2"
+        },
+        {
+            "detectorid": "1951",
+            "detectorclass": "1",
+            "lanenumber": "3"
         }
     ],
     "highway": {
@@ -164,9 +229,19 @@
     "stationid": "1140",
     "detectors": [
         {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
+            "detectorid": "1941",
+            "detectorclass": "1",
+            "lanenumber": "1"
+        },
+        {
+            "detectorid": "1942",
+            "detectorclass": "1",
+            "lanenumber": "2"
+        },
+        {
+            "detectorid": "1943",
+            "detectorclass": "1",
+            "lanenumber": "3"
         }
     ],
     "highway": {
@@ -191,9 +266,19 @@
     "stationid": "1125",
     "detectors": [
         {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
+            "detectorid": "1856",
+            "detectorclass": "1",
+            "lanenumber": "1"
+        },
+        {
+            "detectorid": "1857",
+            "detectorclass": "1",
+            "lanenumber": "2"
+        },
+        {
+            "detectorid": "1858",
+            "detectorclass": "1",
+            "lanenumber": "3"
         }
     ],
     "highway": {
@@ -218,9 +303,19 @@
     "stationid": "1098",
     "detectors": [
         {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
+            "detectorid": "1730",
+            "detectorclass": "1",
+            "lanenumber": "1"
+        },
+        {
+            "detectorid": "1731",
+            "detectorclass": "1",
+            "lanenumber": "2"
+        },
+        {
+            "detectorid": "1732",
+            "detectorclass": "1",
+            "lanenumber": "3"
         }
     ],
     "highway": {
@@ -245,9 +340,19 @@
     "stationid": "1054",
     "detectors": [
         {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
+            "detectorid": "1417",
+            "detectorclass": "1",
+            "lanenumber": "1"
+        },
+        {
+            "detectorid": "1418",
+            "detectorclass": "1",
+            "lanenumber": "2"
+        },
+        {
+            "detectorid": "1419",
+            "detectorclass": "1",
+            "lanenumber": "3"
         }
     ],
     "highway": {
@@ -272,9 +377,19 @@
     "stationid": "1053",
     "detectors": [
         {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
+            "detectorid": "1409",
+            "detectorclass": "1",
+            "lanenumber": "1"
+        },
+        {
+            "detectorid": "1410",
+            "detectorclass": "1",
+            "lanenumber": "2"
+        },
+        {
+            "detectorid": "1411",
+            "detectorclass": "1",
+            "lanenumber": "3"
         }
     ],
     "highway": {
@@ -299,9 +414,19 @@
     "stationid": "1052",
     "detectors": [
         {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
+            "detectorid": "1401",
+            "detectorclass": "1",
+            "lanenumber": "1"
+        },
+        {
+            "detectorid": "1402",
+            "detectorclass": "1",
+            "lanenumber": "2"
+        },
+        {
+            "detectorid": "1403",
+            "detectorclass": "1",
+            "lanenumber": "3"
         }
     ],
     "highway": {
@@ -326,9 +451,19 @@
     "stationid": "1051",
     "detectors": [
         {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
+            "detectorid": "1393",
+            "detectorclass": "1",
+            "lanenumber": "1"
+        },
+        {
+            "detectorid": "1394",
+            "detectorclass": "1",
+            "lanenumber": "2"
+        },
+        {
+            "detectorid": "1395",
+            "detectorclass": "1",
+            "lanenumber": "3"
         }
     ],
     "highway": {
@@ -353,9 +488,19 @@
     "stationid": "1143",
     "detectors": [
         {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
+            "detectorid": "1953",
+            "detectorclass": "1",
+            "lanenumber": "1"
+        },
+        {
+            "detectorid": "1954",
+            "detectorclass": "1",
+            "lanenumber": "2"
+        },
+        {
+            "detectorid": "1955",
+            "detectorclass": "1",
+            "lanenumber": "3"
         }
     ],
     "highway": {
@@ -380,9 +525,19 @@
     "stationid": "1141",
     "detectors": [
         {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
+            "detectorid": "1945",
+            "detectorclass": "1",
+            "lanenumber": "1"
+        },
+        {
+            "detectorid": "1946",
+            "detectorclass": "1",
+            "lanenumber": "2"
+        },
+        {
+            "detectorid": "1947",
+            "detectorclass": "1",
+            "lanenumber": "3"
         }
     ],
     "highway": {
@@ -407,9 +562,19 @@
     "stationid": "1050",
     "detectors": [
         {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
+            "detectorid": "1385",
+            "detectorclass": "1",
+            "lanenumber": "1"
+        },
+        {
+            "detectorid": "1386",
+            "detectorclass": "1",
+            "lanenumber": "2"
+        },
+        {
+            "detectorid": "1387",
+            "detectorclass": "1",
+            "lanenumber": "3"
         }
     ],
     "highway": {
@@ -434,9 +599,19 @@
     "stationid": "1049",
     "detectors": [
         {
-            "detectorid": "",
-            "detectorclass": "",
-            "lanenumber": ""
+            "detectorid": "1377",
+            "detectorclass": "1",
+            "lanenumber": "1"
+        },
+        {
+            "detectorid": "1378",
+            "detectorclass": "1",
+            "lanenumber": "2"
+        },
+        {
+            "detectorid": "1379",
+            "detectorclass": "1",
+            "lanenumber": "3"
         }
     ],
     "highway": {
