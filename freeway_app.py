@@ -6,32 +6,26 @@
 import sys
 from pymongo import MongoClient
 
-try: 
+try:
     DB_IP = sys.argv[1]
     DB_NAME = sys.argv[2]
-    COL_NAME = sys.argv[3]
 
 except IndexError as err:
-    print( "Index Error - need more aguments; DB_IP, DB_NAME, COL_NAME")
+    print( "Index Error - need more aguments; DB_IP, DB_NAME")
     quit()
-
-
-
 
 # creates a MONGODB instance for python
 client = MongoClient ('mongodb://{}:27017'.format(DB_IP))
 
-
+#database name
 db = client[DB_NAME]
-col = db[COL_NAME]
+#collections
+stations = db["stations"]
+highway = db["onehour"]
 
 
-print ("MongoDB collection:" , col , "\n")
+query = {"stationid":"1045"}
+test = stations.find(query)
 
-def main():
-
-    sys_args = sys.argv
-
-    sys_args.pop(0)
-
-
+for x in test:
+    print(x)
