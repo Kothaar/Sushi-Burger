@@ -8,17 +8,16 @@ from pymongo import MongoClient
 
 try:
     DB_IP = sys.argv[1]
-    DB_NAME = sys.argv[2]
 
 except IndexError as err:
-    print( "Index Error - need more aguments; DB_IP, DB_NAME")
+    print( "Index Error - DB_IP")
     quit()
 
 # creates a MONGODB instance for python
 client = MongoClient ('mongodb://{}:27017'.format(DB_IP))
 
 #database name
-db = client[DB_NAME]
+db = client["highwaydata"]
 #collections
 stations = db["stations"]
 highway = db["onehour"]
