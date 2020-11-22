@@ -20,7 +20,7 @@ client = MongoClient ('mongodb://{}:27017'.format(DB_IP))
 db = client["highwaydata"]
 #collections
 stations = db["stations"]
-highway = db["onehour"]
+highway = db["highwayloop"]
 
 
 #Question1
