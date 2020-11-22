@@ -23,8 +23,7 @@ stations = db["stations"]
 highway = db["onehour"]
 
 
-query = {"stationid":"1045"}
-test = stations.find(query)
-
-for x in test:
-    print(x)
+#Question1
+query1 = {"speed":{"$gt":"5", "$lt":"80"}}
+result1 = highway.count_documents(query1)
+print("count the speed < 5 and > 80 : ",result1)
