@@ -7,7 +7,7 @@ import json
 list = []
 result = []
 
-with open("oneHour.csv", newline='') as highway:
+with open("freeway_loopdata.csv", newline='') as highway:
     reader = csv.DictReader(highway)
     count = 1
     for row in reader:
@@ -19,9 +19,7 @@ for i in list:
         result.append(i)
 
 
-with open("hour.json", "w") as file:
-    # file.write('[')
+with open("freeway.json", "w") as file:
     for i in result:
-        json_obj = json.dumps(i, indent=4)
-        file.write(json_obj+'\n')
-    # file.write(']')
+        json_obj = json.dumps(i,indent=4)
+        file.write(json_obj)
