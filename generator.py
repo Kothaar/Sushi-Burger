@@ -59,7 +59,7 @@ def generator(list,highwayList,detectorList):
   #iterate through result and put all the json data into freeway.json
   with open("json/stations.json","w") as outfile:
     for itr in result:
-      json_obj = json.dumps(itr) #add indent=4 to make it more readable
+      json_obj = json.dumps(itr,indent=4) #add indent=4 to make it more readable
       outfile.write(json_obj+'\n\n')
   return
 
