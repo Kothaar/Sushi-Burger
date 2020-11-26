@@ -17,13 +17,21 @@ except IndexError as err:
 client = MongoClient ('mongodb://{}:27017'.format(DB_IP))
 
 #database name
-db = client["highwaydata"]
+db = client["highway"]
 #collections
 stations = db["stations"]
-highway = db["highwayloop"]
+freeway = db["freeway"]
 
 
 #Question1
 query1 = {"speed":{"$gt":"5", "$lt":"80"}}
-result1 = highway.count_documents(query1)
+result1 = freeway.count_documents(query1)
 print("count the speed < 5 and > 80 : ",result1)
+
+#Question2
+query2 = {"locationtext":"Foster NB"}
+resault2 = stations.find(query2)
+print("resaultt2", resault2)
+for x in resault2:
+    print(x)
+
