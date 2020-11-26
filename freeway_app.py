@@ -10,11 +10,11 @@ try:
     DB_IP = sys.argv[1]
 
 except IndexError as err:
-    print( "Index Error - DB_IP")
+    print("Index Error - DB_IP")
     quit()
 
 # creates a MONGODB instance for python
-client = MongoClient ('mongodb://{}:27017'.format(DB_IP))
+client = MongoClient('mongodb://{}:27017'.format(DB_IP))
 
 # database name
 db = client["highway"]
@@ -25,49 +25,91 @@ freeway = db["freeway"]
 
 # Question1
 def Question1():
-    query1 = {"speed":{"$gt":"5", "$lt":"80"}}
+    query1 = {"speed": {"$gt": "5", "$lt": "80"}}
     result1 = freeway.count_documents(query1)
-    print("count the speed < 5 and > 80 : ",result1)
+    print("count the speed < 5 and > 80 : ", result1)
 
 # Question2
+
 
 def Question2():
     location = "Foster NB"
     date = "2011-09-15"
 
-    print("Calulating Volume for: ", location," on: ", date)
+    print("Calulating Volume for: ", location, " on: ", date)
 
     resault3 = stations.aggregate([
-            {
-                "$match" : 
-                        { "locationtext" : location}, 
-            },
-            {
-                "$lookup":
+        {
+            "$match":
+            {"locationtext": location},
+        },
+        {
+            "$lookup":
                 {
                     "from": "freeway",
                     "localField": "detectors.detectorid",
                     "foreignField": "detectorid",
                     "as": "test"
-                 }
-            },
-            {
-               "$unwind" : "$test"
-            },
-            {
-                "$match" : {"test.starttime" : {"$regex" : date}}
-            },
-            { 
-                "$group" : {
-                    "_id" : "$_id",
-                    "volume" : { "$sum" : 1 },
+                }
+        },
+        {
+            "$unwind": "$test"
+        },
+        {
+            "$match": {"test.starttime": {"$regex": date}}
+        },
+        {
+                "$group": {
+                    "_id": "$_id",
+                    "volume": {"$sum": 1},
                 },
-            },
+        },
     ])
 
     for x in resault3:
         volume = x["volume"]
         print("Volume: ", volume)
 
+# Update the Value of Foster NB's Mile Post from 18.1 to 22.6
+
+
+def Question6():
+    print('\n\n***** Question 6 *****\n\n')
+    print('***** Update the value of the Foster NB mile post *****\n\n')
+
+    message = stations.find({'locationtext': 'Foster NB'})
+
+    print('Here is the value of the Foster NB Mile Post before the update: ')
+
+    for x in message:
+        milepost = x['milepost']
+        print('Mile Post: ', milepost, '\n\n')
+
+    stations.update_one({'locationtext': 'Foster NB'},
+                        {'$set': {'milepost': '22.6'}})
+
+    message = stations.find({'locationtext': 'Foster NB'})
+
+    print('Here is the value of Foster NB Mile Post after the update: ')
+
+    for x in message:
+        milepost = x['milepost']
+        print('Mile Post: ', milepost, '\n\n')
+
+    print('Undo the Mile Post Back to its original value')
+    # Change the milepost back to it's original value
+    stations.update_one({'locationtext': 'Foster NB'},
+                        {'$set': {'milepost': '18.1'}})
+
+    message = stations.find({'locationtext': 'Foster NB'})
+
+    print('Here is the value of Foster NB Mile Post after the undo: ')
+
+    for x in message:
+        milepost = x['milepost']
+        print('Mile Post: ', milepost, '\n\n')
+
+
 Question1()
 Question2()
+Question6()
