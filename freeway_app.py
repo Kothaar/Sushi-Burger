@@ -5,61 +5,74 @@
 
 import sys
 from pymongo import MongoClient
-
+from pprint import pprint
 try:
     DB_IP = sys.argv[1]
 
 except IndexError as err:
-    print( "Index Error - DB_IP")
+    print("Index Error - DB_IP")
     quit()
 
 # creates a MONGODB instance for python
-client = MongoClient ('mongodb://{}:27017'.format(DB_IP))
+client = MongoClient('mongodb://{}:27017'.format(DB_IP))
 
-#database name
+# database name
 db = client["highway"]
-#collections
+# collections
 stations = db["stations"]
 freeway = db["freeway"]
 
 
-#Question1
-query1 = {"speed":{"$gt":"5", "$lt":"80"}}
+# Question1
+query1 = {"speed": {"$gt": "5", "$lt": "80"}}
 result1 = freeway.count_documents(query1)
-print("count the speed < 5 and > 80 : ",result1)
+print("count the speed < 5 and > 80 : ", result1)
 
-#Question2
-resault2 = stations.find({"locationtext":"Foster NB"}, {"detectors.detectorid" :
-    1, "_id" : 0})
-#resault2 = stations.find(query2)
-print("resaultt2", resault2)
+# Question2
+result2 = stations.find({"locationtext": "Foster NB"}, {"detectors.detectorid":
+                                                        1, "_id": 0})
+# result2 = stations.find(query2)
+for x in result2:
+    pprint(x)
 
-resault3 = stations.aggregate([
-        {
-            "$match": { "locationtext" : "Foster NB"}
-        },
-        {
-            "$lookup":
+result3 = stations.aggregate([
+    {
+        "$lookup":
             {
                 "from": "freeway",
-                "localField": "detectors.detectorid",
-                "foreignField": "detectorid",
+                "localField": "detector",
+                "foreignField": "detectors.detectorid",
                 "as": "test"
-             }
-        },
-        {
-            "$unwind" : "$test"
-        },
-        {
-            "$project" :{
-                "detectors.detectorid" : "1",
-                "volume" : "1",
-                }
-        },
-                
+            }
+    },
+    {
+        "$unwind": "$test"
+    }
 ])
-resault3 = freeway.find({ "starttime": {"$regex": "2011-09-15"}})
-print("resaultt2", resault2)
 
-for x in resault3:
-    print("test", x)
+# resault3 = freeway.find({"starttime": {"$regex": "2011-09-15"}})
+
+# for x in result3:
+# pprint(x)
+
+test = [
+    {'$match': {'locationtext': 'Foster NB'}},
+    {
+        "$lookup":
+        {
+            "from": "freeway",
+            "localField": "detector",
+            "foreignField": "detectors.detectorid",
+            "as": "test"
+        }
+    },
+    {"$unwind": "$test"},
+    {'$match': {'test.starttime': {'$regex': '2011-09-15'}}},
+    {'$group': {
+        '_id': '$_id',
+        'volume': {'$sum': 1}
+    }}
+]
+
+for doc in (stations.aggregate(test)):
+    pprint(doc)
