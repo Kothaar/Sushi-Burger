@@ -16,53 +16,58 @@ except IndexError as err:
 # creates a MONGODB instance for python
 client = MongoClient ('mongodb://{}:27017'.format(DB_IP))
 
-#database name
+# database name
 db = client["highway"]
-#collections
+# collections
 stations = db["stations"]
 freeway = db["freeway"]
 
 
-#Question1
-query1 = {"speed":{"$gt":"5", "$lt":"80"}}
-result1 = freeway.count_documents(query1)
-print("count the speed < 5 and > 80 : ",result1)
+# Question1
+def Question1():
+    query1 = {"speed":{"$gt":"5", "$lt":"80"}}
+    result1 = freeway.count_documents(query1)
+    print("count the speed < 5 and > 80 : ",result1)
 
-#Question2
-location = "Foster NB"
-date = "2011-09-15"
+# Question2
 
-print("Calulating Volume for: ", location," on: ", date)
+def Question2():
+    location = "Foster NB"
+    date = "2011-09-15"
 
-resault3 = stations.aggregate([
-        {
-            "$match" : 
-                    { "locationtext" : location}, 
-        },
-        {
-            "$lookup":
+    print("Calulating Volume for: ", location," on: ", date)
+
+    resault3 = stations.aggregate([
             {
-                "from": "freeway",
-                "localField": "detectors.detectorid",
-                "foreignField": "detectorid",
-                "as": "test"
-             }
-        },
-        {
-           "$unwind" : "$test"
-        },
-        {
-            "$match" : {"test.starttime" : {"$regex" : date}}
-        },
-        { 
-            "$group" : {
-                "_id" : "$_id",
-                "volume" : { "$sum" : 1 },
+                "$match" : 
+                        { "locationtext" : location}, 
             },
-        },
-])
+            {
+                "$lookup":
+                {
+                    "from": "freeway",
+                    "localField": "detectors.detectorid",
+                    "foreignField": "detectorid",
+                    "as": "test"
+                 }
+            },
+            {
+               "$unwind" : "$test"
+            },
+            {
+                "$match" : {"test.starttime" : {"$regex" : date}}
+            },
+            { 
+                "$group" : {
+                    "_id" : "$_id",
+                    "volume" : { "$sum" : 1 },
+                },
+            },
+    ])
 
-for x in resault3:
-    for i in x:
-        print(i, " ", x[i])
+    for x in resault3:
+        volume = x["volume"]
+        print("Volume: ", volume)
 
+Question1()
+Question2()
