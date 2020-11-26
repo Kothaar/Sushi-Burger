@@ -36,7 +36,8 @@ print("resaultt2", resault2)
 
 resault3 = stations.aggregate([
         {
-            "$match": { "locationtext" : "Foster NB"}
+            "$match" : 
+                    { "locationtext" : "Foster NB"}, 
         },
         {
             "$lookup":
@@ -48,18 +49,25 @@ resault3 = stations.aggregate([
              }
         },
         {
-            "$unwind" : "$test"
+           "$unwind" : "$test"
         },
         {
-            "$project" :{
-                "detectors.detectorid" : "1",
-                "volume" : "1",
-                }
+            "$match" : {"test.starttime" : {"$regex" : "2011-09-15"}}
         },
-                
+        {
+            "$project" : { 
+                "_id" : 0, 
+                "locationtext" : 1, 
+                "test.starttime" : 1, 
+                },
+            
+        },
 ])
-resault3 = freeway.find({ "starttime": {"$regex": "2011-09-15"}})
-print("resaultt2", resault2)
+print(resault3)
+
+
 
 for x in resault3:
-    print("test", x)
+    print(x , "\n")
+
+#resault3 = freeway.find({ "starttime": {"$regex": "2011-09-15"}})
