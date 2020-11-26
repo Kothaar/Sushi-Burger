@@ -29,15 +29,15 @@ result1 = freeway.count_documents(query1)
 print("count the speed < 5 and > 80 : ",result1)
 
 #Question2
-resault2 = stations.find({"locationtext":"Foster NB"}, {"detectors.detectorid" :
-    1, "_id" : 0})
-#resault2 = stations.find(query2)
-print("resaultt2", resault2)
+location = "Foster NB"
+date = "2011-09-15"
+
+print("Calulating Volume for: ", location," on: ", date)
 
 resault3 = stations.aggregate([
         {
             "$match" : 
-                    { "locationtext" : "Foster NB"}, 
+                    { "locationtext" : location}, 
         },
         {
             "$lookup":
@@ -52,22 +52,17 @@ resault3 = stations.aggregate([
            "$unwind" : "$test"
         },
         {
-            "$match" : {"test.starttime" : {"$regex" : "2011-09-15"}}
+            "$match" : {"test.starttime" : {"$regex" : date}}
         },
-        {
-            "$project" : { 
-                "_id" : 0, 
-                "locationtext" : 1, 
-                "test.starttime" : 1, 
-                },
-            
+        { 
+            "$group" : {
+                "_id" : "$_id",
+                "volume" : { "$sum" : 1 },
+            },
         },
 ])
-print(resault3)
-
-
 
 for x in resault3:
-    print(x , "\n")
+    for i in x:
+        print(i, " ", x[i])
 
-#resault3 = freeway.find({ "starttime": {"$regex": "2011-09-15"}})
