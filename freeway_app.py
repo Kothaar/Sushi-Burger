@@ -30,8 +30,6 @@ def Question1():
     print("count the speed < 5 and > 80 : ", result1)
 
 # Question2
-
-
 def Question2():
     location = "Foster NB"
     date = "2011-09-15"
@@ -69,6 +67,44 @@ def Question2():
     for x in resault3:
         volume = x["volume"]
         print("Volume: ", volume)
+
+def Question5():
+    start = "Johnson Cr NB"
+    end = "Columbia to I-205 NB"
+    direction = "NORTH"
+    hiwy = "I-205"
+
+
+    result = stations.find({'locationtext': start})
+    for x in result:
+        print("Starting station: ", x['locationtext'])
+        print("Starting stationid: ", x['stationid'])
+        print("next stationd id", x['stations']['downstream'])
+        current = x['stationid']
+
+    end_result = stations.find({'locationtext': end})
+    for x in end_result:
+        print("Ending stationd station: ", x['locationtext'])
+        print("Ending station stationid: ", x['stationid'])
+        end_id = x["stationid"]
+
+    
+    count = 0
+
+    while current != end_id:
+        current = stations.find({'stationid' : current})
+        for x in current:
+            count += 1
+            print('path step', count,' : ', 'id ', x['stationid']," : ", x['locationtext'] )
+            current = x['stations']['downstream']
+    
+    count += 1
+
+    end_result = stations.find({'stationid': current})
+    for x in end_result:
+        print('path step', count,' : ', 'id ', x['stationid']," : ", x['locationtext'] )
+
+        
 
 # Update the Value of Foster NB's Mile Post from 18.1 to 22.6
 
@@ -110,6 +146,7 @@ def Question6():
         print('Mile Post: ', milepost, '\n\n')
 
 
-Question1()
-Question2()
-Question6()
+#Question1()
+#Question2()
+Question5()
+#Question6()
