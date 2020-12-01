@@ -25,12 +25,16 @@ freeway = db["freeway"]
 
 # Question1
 def Question1():
+    print('\n\n***** Question 1 *****\n\n')
+    print('***** Find the number of speeds < 5 mph and > 80 mph in the data set *****\n\n')
     query1 = {"speed": {"$gt": "5", "$lt": "80"}}
     result1 = freeway.count_documents(query1)
     print("count the speed < 5 and > 80 : ", result1)
 
 # Question2
 def Question2():
+    print('\n\n***** Question 2 *****\n\n')
+    print('\n\n*****  Find the total volume for the station Foster NB for Sept 15, 2011 *****\n\n')
     location = "Foster NB"
     date = "2011-09-15"
 
@@ -69,6 +73,8 @@ def Question2():
         print("Volume: ", volume)
 
 def Question5():
+    print('\n\n***** Question 5 *****\n\n')
+    print('\n\n***** Find a route from Johnson Creek to Columbia Blvd on I-205 NB using the upstream and the downstream fields *****\n\n')
     start = "Johnson Cr NB"
     end = "Columbia to I-205 NB"
     direction = "NORTH"
@@ -146,7 +152,7 @@ def Question6():
         print('Mile Post: ', milepost, '\n\n')
 
 
-#Question1()
-#Question2()
+Question1()
+Question2()
 Question5()
-#Question6()
+Question6()
